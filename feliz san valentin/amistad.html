@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz San Valentín ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.card {
+  background: #fff;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  width: 90%;
+  max-width: 430px;
+  box-shadow: 0 20px 40px rgb(243, 236, 236);
+  animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h1 { color: #e63946; }
+p { color: #444; }
+
+/* imagenes + nombres */
+.imagenes{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.persona {
+  text-align: center;
+}    
+
+.imagenes img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ff6f91;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.imagenes img:hover {
+  transform: scale(1.1);
+}
+
+.nombre {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #c1121f;
+}
+
+/* Mensajes secretos */
+.secreto {
+  margin-top: 8px;
+  font-size: .9rem;
+  background: #e6a6a6;
+  border-radius: 15px;
+  padding: 8px;
+  display: none;
+  animation: aparecerMensaje .5s ease;
+}
+
+@keyframes aparecerMensaje {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chibis anime */
+.personajes {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.chibi {
+  width: 90px;
+}
+
+.cabeza {
+  width: 50px;
+  height: 50px;
+  background: #ffe0bd;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+}
+
+.ojo {
+  width: 09px;
+  height: 09px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+}
+
+.ojo.izq { left: 10px; }
+.ojo.der { right: 10px; }
+
+.boca {
+  width: 10px;
+  height: 10px;
+  border-bottom: 3px solid #e63946;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 09px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Botón */
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #e63946;
+  color: rgb(248, 240, 240);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.mensajeFinal {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #160d0d;
+  display: none;
+}
+
+/* Corazones */
+.corazon {
+  position: absolute;
+  font-size: 22px;
+  animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar {
+  from { transform: translateY(100vh); opacity: 1; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <h1>💘 Feliz San Valentín 💘</h1>
+  <p>Toca las fotos para ver los mensajes secretos 💕</p>
+
+  <!-- imagenes con nombres y mensajes -->
+  <div class="imagenes">
+
+    <div class="persona">
+      <img src="foto1.png" onclick="mostrarSecreto('s1')">
+      <div class="nombre">Mujer</div>
+      <div class="secreto" id="s1">
+        "Feliz Día del Amor y la Amistad, hermosas 💕💖 
+        quiero agradecerles por la amistad
+         tan bonita que me brindaron en el trabajo. 
+         Más que compañeras, fueron amigas que 
+         hicieron mis días más felices y especiales.
+         Gracias por las risas, los consejos y el
+          apoyo que siempre me dieron. Trabajar con 
+          ustedes fue un regalo. Les mando un abrazo a la
+          distancia🫂 con mucho cariño🫶😘
+          DE PARTE DE SU AMIGA LIZ QUE LOS ESTIMA MUCHO🥰❣️."
+      </div>
+    </div>
+
+    <div class="persona">
+      <img src="foto2.png" onclick="mostrarSecreto('s2')">
+      <div class="nombre">Varon</div>
+      <div class="secreto" id="s2">
+        "En este Día de San Valentín chicos🫠,
+        quiero decirles que valoro mucho 
+        la amistad que compartimos. 
+        Gracias por el apoyo, las bromas
+         y por siempre tener buena actitud 
+         incluso en los días más pesados.Fueron 
+         unos lindos compañeros con migo.
+       Gracias por las risas, el compañerismo y
+        por haber sido parte de una etapa tan
+         bonita en el trabajo🥹🫶.
+         Un fuerte abrazo a la distancia de parte de su amiga
+         LIZ😉 "
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Chibis anime -->
+  <div class="personajes">
+    <div class="chibi">
+      <div class="cabeza">
+        <div class="ojo izq"></div>
+        <div class="ojo der"></div>
+        <div class="boca"></div>
+      </div>
+      <div class="cuerpo"></div>
+    </div>
+
+    <div class="chibi">
+      <div class="cabeza">
+        <div class="ojo izq"></div>
+        <div class="ojo der"></div>
+        <div class="boca"></div>
+      </div>
+      <div class="cuerpo"></div>
+    </div>
+  </div>
+
+  <button onclick="final()">❤️ Presiona aquí ❤️</button>
+
+  <div class="mensajeFinal" id="final">
+   Tuve la suerte de encontrar
+        amistades como ustedes que 
+        me brindaron su apoyo, su paciencia 
+          su lealtad etc; de verdad gracias 
+          por todo el aprecio que tuvieron
+           conmigo y tambien por demostrarme que en 
+           este mundo no hay personas en las que se puede confiar🫶
+  </div>
+</div>
+
+<script>
+function mostrarSecreto(id) {
+  const msg = document.getElementById(id);
+  msg.style.display = msg.style.display === "block" ? "none" : "block";
+}
+
+function final() {
+  const msg = document.getElementById("final");
+  msg.style.display = msg.style.display === "block" ? "none" : "block";
+
+  
+  document.getElementById("musica").play();
+
+  for (let i = 0; i < 25; i++) {
+    let corazon = document.createElement("div");
+    corazon.className = "corazon";
+    corazon.innerHTML = "💖";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(corazon);
+
+    setTimeout(() => corazon.remove(), 6000);
+  }
+}
+</script>
+
+</body>
+</html>
